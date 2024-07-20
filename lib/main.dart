@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_otp/bloc/app_bloc.dart';
+import 'package:my_otp/views/splash_page.dart';
 
-import 'repository/app_repository.dart';
+import 'package:my_otp/repository/app_repository.dart';
 
 void main() {
   runApp(const MyApp());
@@ -69,12 +70,19 @@ class _AppViewState extends State<AppView> {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<AppBloc, AppState>(builder: (context, state) {
-      Widget child = const Center(child: CircularProgressIndicator());
+      Widget child = context.widget;
+      if (state.status == AppStatus.initialApp) {
+        child = const SplashPage();
+        _appBloc.add(const LoadDataEvent());
+      } else if(state.status == AppStatus.loadDataCompleted) {
+      } else {
+        child = const Center(child: CircularProgressIndicator());
+      }
       return Scaffold(
-          appBar: AppBar(
-            title: const Text('Floatwing example app'),
-          ),
-          body: child);
+            appBar: AppBar(
+              title: const Text('My OTP'),
+            ),
+            body: child);
     });
   }
 }

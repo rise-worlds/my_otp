@@ -1,9 +1,7 @@
 enum AppStatus {
   initialApp,
-  scanApp,
-  scanAppCompleted,
-  checkApp,
-  checkAppCompleted
+  loadData,
+  loadDataCompleted,
 }
 
 class AppRepository {}

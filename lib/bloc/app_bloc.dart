@@ -16,21 +16,16 @@ class AppBloc extends Bloc<AppEvent, AppState> {
   AppBloc({
     required this.appRepository,
   }) : super(const AppInitial()) {
-    on<ScanAppEvent>(_onScanAppChanged);
-    on<CheckAppEvent>(_onCheckAppChanged);
+    on<LoadDataEvent>(_onScanAppChanged);
   }
 
   final AppRepository appRepository;
 
   Future<void> _onScanAppChanged(
-    ScanAppEvent event,
+    LoadDataEvent event,
     Emitter<AppState> emit,
   ) async {
-    emit(const ScanApp());
+    emit(const LoadData());
   }
 
-  Future<void> _onCheckAppChanged(
-    CheckAppEvent event,
-    Emitter<AppState> emit,
-  ) async {}
 }

@@ -6,10 +6,6 @@ abstract class AppEvent {
   final AppStatus status;
 }
 
-class ScanAppEvent extends AppEvent {
-  const ScanAppEvent({super.status = AppStatus.scanApp});
-}
-
-class CheckAppEvent extends AppEvent {
-  const CheckAppEvent({super.status = AppStatus.checkApp});
+class LoadDataEvent extends AppEvent {
+  const LoadDataEvent({super.status = AppStatus.loadData});
 }

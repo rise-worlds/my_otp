@@ -13,32 +13,18 @@ class AppInitial extends AppState {
   List<Object> get props => [status];
 }
 
-class ScanApp extends AppState {
-  const ScanApp() : super(AppStatus.scanApp);
+class LoadData extends AppState {
+  const LoadData() : super(AppStatus.loadData);
 
   @override
   List<Object> get props => [status];
 }
 
-class ScanAppCompleted extends AppState {
+class LoadDataCompleted extends AppState {
   final List<AppModel> apps;
 
-  const ScanAppCompleted(this.apps) : super(AppStatus.scanAppCompleted);
+  const LoadDataCompleted(this.apps) : super(AppStatus.loadDataCompleted);
   @override
   List<Object> get props => [status, apps];
 }
 
-class CheckApp extends AppState {
-  final List<AppModel> apps;
-  const CheckApp(this.apps) : super(AppStatus.checkApp);
-  @override
-  List<Object> get props => [status, apps];
-}
-
-class CheckAppCompleted extends AppState {
-  final List<AppModel> apps;
-
-  const CheckAppCompleted(this.apps) : super(AppStatus.checkAppCompleted);
-  @override
-  List<Object> get props => [status, apps];
-}

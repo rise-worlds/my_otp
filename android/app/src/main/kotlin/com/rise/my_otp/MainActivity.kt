@@ -1,4 +1,4 @@
-package com.example.my_otp
+package com.rise.my_otp
 
 import io.flutter.embedding.android.FlutterActivity
 
