@@ -21,7 +21,7 @@ class LoadData extends AppState {
 }
 
 class LoadDataCompleted extends AppState {
-  final List<AppModel> apps;
+  final List<OTPModel> apps;
 
   const LoadDataCompleted(this.apps) : super(AppStatus.loadDataCompleted);
   @override

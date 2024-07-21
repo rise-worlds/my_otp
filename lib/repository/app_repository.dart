@@ -7,5 +7,8 @@ enum AppStatus {
 }
 
 class AppRepository {
-  List<AppModel> models = <AppModel>[];
+  List<OTPModel> models = <OTPModel>[
+    OTPModel(account: 'rise.worlds', issuer: 'microsoft', secret: '6FLLEVPDSIIN3GCO4PXBG6UEMCCUT5W2')
+  ];
+
 }

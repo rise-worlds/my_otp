@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_otp/bloc/app_bloc.dart';
@@ -39,6 +40,7 @@ class _AppState extends State<MyApp> {
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
             primarySwatch: Colors.blue,
+            useMaterial3: true,
           ),
           home: const AppView(),
         ),
@@ -84,6 +86,13 @@ class _AppViewState extends State<AppView> {
       return Scaffold(
             appBar: AppBar(
               title: const Text('My OTP'),
+              scrolledUnderElevation: 4.0,
+              shadowColor: Theme.of(context).colorScheme.shadow,
+              actions: <Widget>[
+                IconButton(
+                  icon: const Icon(Icons.more_vert),
+                  tooltip: 'option', onPressed: () { return; },
+                )],
             ),
             body: child);
     });
