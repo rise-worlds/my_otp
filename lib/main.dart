@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_otp/bloc/app_bloc.dart';
+import 'package:my_otp/views/otp_list_page.dart';
 import 'package:my_otp/views/splash_page.dart';
 
 import 'package:my_otp/repository/app_repository.dart';
@@ -74,7 +75,9 @@ class _AppViewState extends State<AppView> {
       if (state.status == AppStatus.initialApp) {
         child = const SplashPage();
         _appBloc.add(const LoadDataEvent());
-      } else if(state.status == AppStatus.loadDataCompleted) {
+      } else if (state.status == AppStatus.loadDataCompleted) {
+        var _ = (state as LoadDataCompleted);
+        child = OtpListPage(_.apps);
       } else {
         child = const Center(child: CircularProgressIndicator());
       }

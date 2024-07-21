@@ -26,6 +26,7 @@ class AppBloc extends Bloc<AppEvent, AppState> {
     Emitter<AppState> emit,
   ) async {
     emit(const LoadData());
+    emit(LoadDataCompleted(appRepository.models));
   }
 
 }
